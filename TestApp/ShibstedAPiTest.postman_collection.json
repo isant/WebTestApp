@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "a1b13152-d3a2-4ce5-b63d-00986e8342cf",
+		"name": "ShibstedAPiTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"Id\":0,\r\n   \"UserName\":\"NewUser\",\r\n   \"Password\":\"newuser\",\r\n   \"Roles\":[ { \"Id\":1, \"Name\":\"ADMIN\", \"Description\":\"Admin role.\" }   ]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:54816/CreateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54816",
+					"path": [
+						"CreateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersListOk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:54816/getusers/1/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54816",
+					"path": [
+						"getusers",
+						"1",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsersKo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:54816/getusers/2/user1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54816",
+					"path": [
+						"getusers",
+						"2",
+						"user1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"Id\":3,\r\n   \"UserName\":\"UpdatedUser\",\r\n   \"Password\":\"updatedUser\",\r\n   \"Roles\":[\r\n      {\r\n         \"Id\":3,\r\n         \"Name\":\"PAGE_2\",\t\t \r\n         \"Description\":\"role for page 2\"\r\n      }\r\n   ]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:54816/UpdateUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "54816",
+					"path": [
+						"UpdateUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
